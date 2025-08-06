@@ -408,8 +408,8 @@ User Question: ${input}`;
     let chatHistory = [{ role: 'user', parts: [{ text: prompt }] }];
     const payload = { contents: chatHistory };
     const apiKey = import.meta.env.VITE_API_URL;
-
-    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+    console.log('API Key:', apiKey); // Debugging line to check API key
+    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
 
     const maxRetries = 5;
     let retryCount = 0;
